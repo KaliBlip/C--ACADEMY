@@ -7,17 +7,16 @@ class Program
         Console.WriteLine("Starting of program");
         Console.WriteLine("");
 
-       Console.Write("Enter your name; ");
-       String name = Console.ReadLine();
+     
+        String name = "";
 
         while (name == "")
         {
-            Console.Write("Enter your name; ");
+            Console.Write("Enter your name: ");
             name = Console.ReadLine();
         }
-       
-       Console.WriteLine("HEllo, " + name );
-       
+      
+        Console.WriteLine("HEllo " + name);
         
         Console.ReadKey();
     }
