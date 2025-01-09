@@ -7,24 +7,65 @@ class Program
         Console.WriteLine("Starting of program");
         Console.WriteLine("");
 
+        Random random = new Random();
+        bool playAgain = true;
+        int min = 1;
+        int max = 100;
+        int guess;
+        int number;
+        int guesses;
+        String response;
 
-        Console.Write("How many rows?: ");
-        int rows = Convert.ToInt32(Console.ReadLine());
 
-        Console.Write("How many columns?: ");
-        int columns = Convert.ToInt32(Console.ReadLine());
-
-        Console.Write("What symbol: ");
-        String symbol = Console.ReadLine();
-
-        for (int i = 0; i < rows; i++)
+        while (playAgain)
         {
-            for (int j = 0; j < columns; j++)
+            guess = 0;
+            guesses = 0;
+            response = "";
+            number = random.Next(min, max + 1);
+
+        while (guess != number)
+        {
+            Console.WriteLine("Guess a number between " + min + " -" + max + ":");
+            
+            guess = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Guess: " + guess);
+
+            if (guess > number)
             {
-                Console.Write(symbol);
+                Console.WriteLine(guess + " is too high!");
             }
-            Console.WriteLine();
+            else if (guess < number)
+            {
+                Console.WriteLine(guess + " is too low!");
+            }
+            
+            
+            guesses++;
+
         }
+        Console.WriteLine("Number: " + number);
+        Console.WriteLine("YOU WIN!");
+        Console.WriteLine("Guesses: " + guesses);
+
+        Console.WriteLine("Would you like to play again (yes/no): ");
+        response = Console.ReadLine();
+        response = response.ToUpper();
+
+        if (response == "Y")
+        {
+            playAgain = true;
+        }
+        else 
+        {
+            playAgain = false;
+        }
+
+        }
+        
+        Console.WriteLine("Thanks for playing! ...... I guess");
+
         
         
         Console.ReadKey();
