@@ -7,12 +7,24 @@ class Program
         Console.WriteLine("Starting of program");
         Console.WriteLine("");
 
-        for (int i = 10; i > 0; i--)
+
+        Console.Write("How many rows?: ");
+        int rows = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("How many columns?: ");
+        int columns = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("What symbol: ");
+        String symbol = Console.ReadLine();
+
+        for (int i = 0; i < rows; i++)
         {
-            Console.WriteLine(i);
+            for (int j = 0; j < columns; j++)
+            {
+                Console.Write(symbol);
+            }
+            Console.WriteLine();
         }
-        Console.WriteLine("Happy New Year");
-      
         
         
         Console.ReadKey();
